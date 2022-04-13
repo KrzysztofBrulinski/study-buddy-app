@@ -1,30 +1,28 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { Wrapper, StyledAppTitle, StyledNavigation } from './Navigation.styles';
+import { Wrapper, Logo, StyledNavigation, StyledLink } from './Navigation.styles';
 
-const Navigation = ({ links }) => (
+const links = [
+  { label: 'Dashboard', url: '/' },
+  { label: 'Add user', url: '/add-user' },
+];
+
+const Navigation = () => (
   <Wrapper>
-    <StyledAppTitle>
-      <h1>Study Buddy</h1>
-    </StyledAppTitle>
+    <Logo>
+      <h2>
+        Study
+        <br />
+        Buddy
+      </h2>
+    </Logo>
     <StyledNavigation>
       {links.map((link) => (
-        <Link key={link.url} to={link.url}>
+        <StyledLink key={link.url} to={link.url}>
           {link.label}
-        </Link>
+        </StyledLink>
       ))}
     </StyledNavigation>
   </Wrapper>
 );
-
-Navigation.propTypes = {
-  links: PropTypes.arrayOf(
-    PropTypes.shape({
-      url: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-};
 
 export default Navigation;

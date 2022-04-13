@@ -1,6 +1,6 @@
 import React from 'react';
-import { Label } from 'components/Atoms/Label/Label';
-import { Input } from 'components/Atoms/Input/Input';
+import { Label } from 'components/atoms/Label/Label';
+import { Input } from 'components/atoms/Input/Input';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
