@@ -1,19 +1,27 @@
-import UsersListItem from 'components/Molecules/UsersListItem/UsersListItem';
+import UsersListItem from 'components/molecules/UsersListItem/UsersListItem';
 import { StyledList } from './UsersList.styles';
-import { MainWrapper } from 'assets/styles/StyledComponents/MainWrapper.style';
+import { MainWrapper } from 'assets/styles/GlobalStyledComponents/MainWrapper.style';
+import PropTypes from 'prop-types';
+import { UserShape } from 'types';
+import { Title } from 'components/atoms/Title/Title';
 
-const UsersList = ({ users, deleteUser }) => {
+const UsersList = ({ users }) => {
   return (
     <>
       <MainWrapper>
+        <Title>Students</Title>
         <StyledList>
           {users.map((userData) => (
-            <UsersListItem deleteUser={deleteUser} key={userData.name} userData={userData} />
+            <UsersListItem key={userData.name} userData={userData} />
           ))}
         </StyledList>
       </MainWrapper>
     </>
   );
+};
+
+UsersList.propTypes = {
+  users: PropTypes.arrayOf(PropTypes.shape(UserShape)),
 };
 
 export default UsersList;
