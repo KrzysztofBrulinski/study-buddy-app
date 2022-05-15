@@ -2,7 +2,7 @@ import FormField from 'components/molecules/FormField/FormField';
 import { Button } from 'components/atoms/Button/Button';
 import { MainWrapper } from 'assets/styles/GlobalStyledComponents/MainWrapper.style';
 import { Title } from 'components/atoms/Title/Title';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { UsersContext } from 'providers/UsersProvider';
 import { useForm } from 'hooks/useForm';
 
@@ -27,10 +27,6 @@ const AddUser = () => {
       handleThrowError('You need to accept that checkbox');
     }
   };
-
-  useEffect(() => {
-    console.log('formValues', formValues);
-  }, [formValues]);
 
   return (
     <>
